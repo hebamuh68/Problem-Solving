@@ -1,3 +1,26 @@
+# Approach 1: Binary Search
+
+def search(nums, target):
+    min = 0
+    max = len(nums) + 1
+
+    while min <= max:
+        # mid = (max - min) // 2, then add the part we checked to skip it and not
+        # start from beginning
+        mid = min + (max - min) // 2
+        if target == nums[mid]:
+            return mid
+        elif target < nums[mid]:
+            max = mid - 1
+        else:
+            min = mid + 1
+
+    return -1
+
+
+print(search([-1, 0, 3, 5, 9, 12], 9))
+
+____________________________________________________________
 #278. First Bad Version
 
 # The isBadVersion API is already defined for you.
