@@ -2,7 +2,7 @@
 
 def search(nums, target):
     min = 0
-    max = len(nums) + 1
+    max = len(nums) - 1
 
     while min <= max:
         # mid = (max - min) // 2, then add the part we checked to skip it and not
