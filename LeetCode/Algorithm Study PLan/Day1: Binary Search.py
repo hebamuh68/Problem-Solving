@@ -1,4 +1,4 @@
-# Approach 1: Binary Search
+# Binary Search
 
 def search(nums, target):
     min = 0
@@ -21,28 +21,23 @@ def search(nums, target):
 print(search([-1, 0, 3, 5, 9, 12], 9))
 
 ____________________________________________________________
-#278. First Bad Version
+# First Bad Version
+def firstBadVersion(self, n: int) -> int:
+        min = 1
+        max = n
 
-# The isBadVersion API is already defined for you.
-# @param version, an integer
-# @return an integer
-# def isBadVersion(version):
-
-class Solution:
-    def firstBadVersion(self, n):
-
-        if n <= 0: return 0
-
-        left, right = 1, n
-
-        while left <= right:
-            mid = left + (right - left) // 2
-
-            if not isBadVersion(mid):
-                left = mid + 1
-            else:
-                right = mid - 1
-        return left
+        while min < max:
+            
+            mid = min + (max - min) // 2
+            flag = isBadVersion(mid)
+            
+            if flag == False:
+                min = mid + 1
+            elif flag == True :
+                max = mid
+            
+                
+        return max
 ____________________________________________________________
 #35. Search Insert Position
 
