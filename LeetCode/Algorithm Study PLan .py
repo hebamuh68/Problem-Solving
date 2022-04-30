@@ -46,24 +46,23 @@ ____________________________________________________________
 
 # 35. Search Insert Position
 
+def searchInsert(nums, target):
+    min = 0
+    max = len(nums) - 1
 
-class Solution:
-    def searchInsert(self, nums: List[int], target: int) -> int:
-        start = 0
-        end = len(nums) - 1
-        self.target = target
+    while min <= max:
+        # mid = (max - min) // 2, then add the part we checked to skip it and not
+        # start from beginning
+        mid = min + (max - min) // 2
+        if target == nums[mid]:
+            return mid
+        elif target < nums[mid]:
+            max = mid - 1
+        else:
+            min = mid + 1
 
-        while start <= end:
-            mid = (start + end) // 2
-            guess = nums[mid]
+    return min
 
-            if guess == self.target:
-                return mid
-            if guess > self.target:
-                end = mid - 1
-            else:
-                start = mid + 1
-        return end + 1
 
 
 #____________________________________________________________
