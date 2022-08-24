@@ -31,3 +31,51 @@ function myFunction(a) {
 function myFunction(a) {
   return a - Math.floor(a) === 0
 }
+
+//=======================================================
+// WEAK 3
+//=======================================================
+// 6- Get nth element of array
+
+function myFunction(a, n) {
+   
+   return a[n-1];
+}
+
+//=======================================================
+// 7- Remove first n elements of an array
+function myFunction(a) {
+   
+   return a.slice(3,(a.length));
+   
+}
+
+function myFunction(a) {
+   return a.slice(3);
+}
+
+//=======================================================
+// 8- Return last n array elements
+function myFunction(a, n) {
+   
+   return a.slice(-n)
+}
+
+//=======================================================
+// 9- Remove a specific array element
+function myFunction(a, b) {
+   
+   for (var i = 0; i <= a.length; i++ ) {
+   if (a[i] === b){
+   a.splice(a.indexOf(b), 1); }
+   }
+   
+   return a;
+}
+
+function myFunction( a, b ) {
+  return a.filter(cur => cur !== b)
+}
+
+//=======================================================
+// 10- Sort an array of strings alphabetically
