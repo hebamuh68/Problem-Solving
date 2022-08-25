@@ -79,3 +79,42 @@ function myFunction( a, b ) {
 
 //=======================================================
 // 10- Sort an array of strings alphabetically
+function myFunction(arr) {
+   
+   arr.sort();
+   return arr;
+}
+
+//=======================================================
+// 11- Merge two arrays with duplicate values
+function myFunction(a, b) {
+   
+   const join_arr = [...a, ...b];
+   const result = [...new Set(join_arr)];
+   const srt = result.sort(function (a, b) {  return a - b;  });
+   return srt;
+   
+}
+
+function myFunction(a, b) {
+  return [...new Set([...a, ...b])].sort((x, y) => x - y);
+}
+
+//=======================================================
+// 13- Sort an array of numbers in descending order
+function myFunction(arr) {
+   
+   let dscN = arr.sort((f, s) => s - f);
+   return dscN
+}
+
+//=======================================================
+// 13- Calculate the sum of an array of numbers
+function myFunction(a) {
+   
+   const sum = a.reduce((accumulator, value) => {
+     return accumulator + value;
+   }, 0);
+   
+   return sum;
+}
